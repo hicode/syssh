@@ -3,7 +3,39 @@ var page,nav,header,tabs,aside,calendar,
 
 var Workspace = Backbone.Router.extend({
 	routes: {
-		'(:controller)(/:method)(/:para1)(/:para2)(/:para3)':'common'
+		'document':'documentList',
+		'document/[edit|add][/[\d+]]?':'documentEdit',
+		'evaluation':'evaluation',
+		'message':'message',
+		'/[people|client|contact|society|staff|student|team]/[edit|add][/[\d+]]?/':'people',
+		'project|cases|evaluation|query|':'project',
+		'schedule/list':'schedule',
+		'schedule':'scheduleCalendar',
+		'*common':'common'
+	},
+	
+	documentList: function(){
+		this.common();
+	},
+	
+	evaluation: function(){
+		this.common();
+	},
+	
+	message: function(){
+		this.common();
+	},
+	
+	people: function(){
+		this.common();
+	},
+	
+	project: function (){
+		this.common();
+	},
+	
+	schedule: function(){
+		this.common();
 	},
 	
 	common: function(){
